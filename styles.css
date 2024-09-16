@@ -1,0 +1,193 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure the body takes up the full height of the viewport */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('images/backr.png');
+    background-color: #705f5f; /* Corrected color value */
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    position: relative; /* Ensure floating images are positioned relative to the body */
+}
+
+header {
+    text-align: center;
+    margin: 0;
+    position: relative; /* Allow positioning of pseudo-elements */
+}
+
+/* Title Image Styling */
+.title-img {
+    max-width: 100%; /* Ensure the image scales with the viewport */
+    height: auto; /* Maintain the aspect ratio */
+    animation: blurEffect 3s ease-in-out infinite;
+}
+
+/* Blur animation effect */
+@keyframes blurEffect {
+    0% {
+        filter: blur(10px); /* Start with a strong blur */
+        opacity: 0.7;
+    }
+    50% {
+        filter: blur(0px); /* Clear up the image */
+        opacity: 1;
+    }
+    100% {
+        filter: blur(10px); /* Return to the blurred state */
+        opacity: 0.7;
+    }
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Adjust height considering header */
+    margin-bottom: 60px; /* Add margin to ensure space between main content and bottom section */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+/* Large image with glowing border effect */
+.large-img {
+    width: 750px;
+    height: 750px;
+    border: 5px solid transparent; /* Transparent border to show glowing effect */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 15px #ffde59; /* Glowing shadow effect */
+    background: #222; /* Optional: background color for better glow visibility */
+}
+
+/* Animation for rise effect */
+@keyframes rise {
+    0% {
+        transform: translateY(50px); /* Start 50px below the initial position */
+        opacity: 0; /* Start fully transparent */
+    }
+    100% {
+        transform: translateY(0); /* End at the initial position */
+        opacity: 1; /* End fully opaque */
+    }
+}
+
+.small-images {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px; /* Adjust spacing between large and small images */
+}
+
+.small-img {
+    width: 400px;
+    height: 400px;
+    margin-bottom: 20px; /* Adjust spacing between the two small images */
+    animation: rise 1s ease-out forwards; /* Apply rise animation */
+}
+
+/* Bottom Section */
+.bottom-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 60px; /* Add margin to ensure space from the top section */
+    background: url('images/backr.png'); /* Use the same background image */
+    background-size: cover; /* Ensure the background image covers the section */
+    background-position: center; /* Center the background image */
+}
+
+/* Apply the vampire-style font */
+.text-box {
+    width: 30%; /* Adjust width as needed */
+    color: #ffde59;
+    font-family: 'Tan Grandeur', Arial, sans-serif; /* Apply the custom font */
+    margin-left: 90px;
+}
+
+.text-box h2 {
+    margin-top: 0;
+    font-size: 2em; /* Adjust size as needed */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Optional: add shadow for better readability */
+}
+
+/* Bottom image styling with animation */
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.5); /* Start at half size */
+        opacity: 0; /* Start fully transparent */
+    }
+    100% {
+        transform: scale(1); /* End at original size */
+        opacity: 1; /* End fully opaque */
+    }
+}
+
+.bottom-img {
+    width: 70%; /* Reduce width to make the image smaller */
+    height: auto;
+    max-width: 1400px; /* Adjust max-width to fit the image appropriately */
+    border: 5px solid #6e606000; /* Optional: border for styling */
+    box-shadow: 0 0 15px #ffde59; /* Glowing shadow effect */
+    background: #222; /* Optional: background color for better glow visibility */
+    opacity: 0; /* Initially hidden */
+    transform: scale(0.5); /* Initially scaled down */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
+}
+
+.bottom-img.animate {
+    opacity: 1; /* Make the image visible */
+    transform: scale(1); /* Scale to original size */
+}
+
+/* Social Media Icons */
+.social-icons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 10px; /* Space between icons */
+}
+
+.social-icon {
+    width: 100px;
+    height: 100px;
+}
+
+/* Floating Images */
+.floating-img {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    animation: moveAround 15s linear infinite; /* Animation for floating */
+}
+
+/* Floating animation effect */
+@keyframes moveAround {
+    0% {
+        top: 0%;
+        left: 0%;
+    }
+    25% {
+        top: 0%;
+        left: 100%;
+    }
+    50% {
+        top: 100%;
+        left: 100%;
+    }
+    75% {
+        top: 100%;
+        left: 0%;
+    }
+    100% {
+        top: 0%;
+        left: 0%;
+    }
+}
